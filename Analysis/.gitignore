@@ -1,2 +1,4 @@
 *.txt
 *.bin
+.ipynb_checkpoints
+__pycache__
