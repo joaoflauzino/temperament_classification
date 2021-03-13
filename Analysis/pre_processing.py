@@ -48,7 +48,6 @@ class preprocess_nlp(object):
             text = ''.join(c for c in text if not c.isdigit())
             text = re.sub('((www\.[^\s]+)|(https?://[^\s]+)|(http?://[^\s]+))', '', text)
             text = ''.join(c for c in text if c not in punctuation)
-            # Checar se é necessário tirar todas hashtag no texto
             new_texts.append(text)
         
         self.new_texts = new_texts
@@ -106,7 +105,7 @@ class preprocess_nlp(object):
 
     def extract_stem(self):
 
-        stemmer = nltk.stem.SnowballStemmer('english')
+        stemmer = nltk.stem.SnowballStemmer('portuguese')
         new_texts = list()
 
         for text in self.texts:
