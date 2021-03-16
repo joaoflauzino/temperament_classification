@@ -33,8 +33,8 @@ class classification_models(object):
     def k_fold(self):
         kf = RepeatedKFold(n_splits=5, n_repeats=30, random_state=20)
         for linhas_treino, linhas_valid in kf.split(self.X):
-            self.X_train, self.X_valid = self.X.iloc[linhas_treino], self.X.iloc[linhas_valid]
-            self.Y_train, self.Y_valid = self.Y.iloc[linhas_treino], self.Y['y_train_res'].iloc[linhas_valid]
+            self.X_train, self.X_valid = self.X[linhas_treino], self.X[linhas_valid]
+            self.Y_train, self.Y_valid = self.Y.iloc[linhas_treino], self.Y.iloc[linhas_valid]
             self.apply_model()
             
     def hist_validation(self):

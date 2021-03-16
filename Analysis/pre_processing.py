@@ -174,4 +174,4 @@ class preprocess_nlp(object):
             print('metodo nao mapeado!')
             exit()
             
-        return text_vect, self.new_texts
+        return text_vect
